@@ -1,7 +1,7 @@
 
 import psycopg2
 from psycopg2.extras import RealDictCursor
-
+import pandas as pd
 """
 CREATE TABLE PremStats23_24(
     id SERIAL PRIMARY KEY,
@@ -53,7 +53,6 @@ data = {
 
 def fetchData(dbConnection):
     cursor = dbConnection.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT * FROM premstats23_24;")
-    records = cursor.fetchall()
-    for record in records:
-        print(record)
+    query = cursor.execute("SELECT * FROM premstats23_24;")
+    dataFrame = pd.read_sql_query(query, dbConnection)
+    return dataFrame

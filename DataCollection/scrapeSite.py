@@ -9,7 +9,7 @@ from db import connect_to_db, insertData, fetchData
 #from extensions import proxies
 import numpy as np
 import pandas as pd
-from dotenv import load_dotenv
+
 import time
 website = "https://www.premierleague.com"
 

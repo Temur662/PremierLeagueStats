@@ -22,13 +22,13 @@ def compareTeams(dataFrame,team1, team2):
     team1AvgCleanPerGame = team1Stats["cleansheets"] / team1Stats["matchesplayed"]
     team2AvgCleanPerGame = team2Stats["cleansheets"] / team2Stats["matchesplayed"]
     data = {
-        team1Stats["clubname"].values[0]:{
+        f"{team1Stats['clubname'].values[0]}":{
             "Avg Win Rate": team1AvgWinRate.values[0],
             "Avg Goal": round(team1AvgGoalsPerGame.values[0],2 ),
             "Avg Goals Conceded":  round(team1AvgGoalsConPerGame.values[0], 2),
             "Avg Clean Sheets": round(team1AvgCleanPerGame.values[0], 2)
         },
-        team2Stats["clubname"].values[0] :{
+        f"{team2Stats['clubname'].values[0]}" :{
             "Avg Win Rate": team2AvgWinRate.values[0],
             "Avg Goal": round(team2AvgGoalsPerGame.values[0], 2),
             "Avg Goals Conceded":  round(team2AvgGoalsConPerGame.values[0], 2),
@@ -57,7 +57,7 @@ def compareTeams(dataFrame,team1, team2):
         ha = "center", va = "bottom")
     ax.set_xlabel("Categories")
     ax.set_ylabel("Values")
-    ax.set_title(f"{team1Stats["clubname"].values[0]} vs {team2Stats["clubname"].values[0]}")
+    ax.set_title ( f"{team1Stats['clubname'].values[0]}  vs {team2Stats['clubname'].values[0]}" )
     ax.set_xticks(positions)
     ax.set_xticklabels(categories)
     ax.legend()

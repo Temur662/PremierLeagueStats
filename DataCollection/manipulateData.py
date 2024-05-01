@@ -22,13 +22,13 @@ def compareTeams(dataFrame,team1, team2):
     team1AvgCleanPerGame = team1Stats["cleansheets"] / team1Stats["matchesplayed"]
     team2AvgCleanPerGame = team2Stats["cleansheets"] / team2Stats["matchesplayed"]
     data = {
-        f"{team1Stats["clubname"].values[0]}":{
+        team1Stats["clubname"].values[0]:{
             "Avg Win Rate": team1AvgWinRate.values[0],
             "Avg Goal": round(team1AvgGoalsPerGame.values[0],2 ),
             "Avg Goals Conceded":  round(team1AvgGoalsConPerGame.values[0], 2),
             "Avg Clean Sheets": round(team1AvgCleanPerGame.values[0], 2)
         },
-        f"{team2Stats["clubname"].values[0]}":{
+        team2Stats["clubname"].values[0] :{
             "Avg Win Rate": team2AvgWinRate.values[0],
             "Avg Goal": round(team2AvgGoalsPerGame.values[0], 2),
             "Avg Goals Conceded":  round(team2AvgGoalsConPerGame.values[0], 2),

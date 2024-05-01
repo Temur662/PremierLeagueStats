@@ -53,6 +53,6 @@ data = {
 
 def fetchData(dbConnection):
     cursor = dbConnection.cursor(cursor_factory=RealDictCursor)
-    query = cursor.execute("SELECT * FROM premstats23_24;")
+    query = "SELECT * FROM premstats23_24;"
     dataFrame = pd.read_sql_query(query, dbConnection)
     return dataFrame

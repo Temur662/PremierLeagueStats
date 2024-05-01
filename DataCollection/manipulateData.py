@@ -86,8 +86,8 @@ def getWorstPerfomingTeam(dataFrame):
 
 def getClubMatchOutcomes(dataFrame, club):
     labels = ["Wins", "Losses"]
-    wins = dataFrame.loc[dataFrame["clubname"] == club, "wins"][0]
-    losses = dataFrame.loc[dataFrame["clubname"] == club, "losses"][0]
+    wins = dataFrame.loc[dataFrame["clubname"] == club, "wins"].values[0]
+    losses = dataFrame.loc[dataFrame["clubname"] == club, "losses"].values[0]
     
     fig, ax = plt.subplots()
     ax.pie([wins,losses], labels=labels,autopct='%1.1f%%')

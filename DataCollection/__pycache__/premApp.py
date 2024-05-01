@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 from manipulateData import compareTeams, getBestPerformingTeam, getWorstPerfomingTeam, getData, getClubMatchOutcomes
 from db import connect_to_db
 load_dotenv()
-
 premApp = Flask(__name__)
 
 def loadData():
@@ -99,4 +98,4 @@ def getMatchOutComes():
         return send_file(buf, mimetype="image/png")
     
 if __name__ == '__main__':
-    premApp.run(debug=True)
+    premApp.run(host='0.0.0.0', port=10000,debug=True)

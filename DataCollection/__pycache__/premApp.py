@@ -98,7 +98,5 @@ def getMatchOutComes():
         buf.seek(0)
         return send_file(buf, mimetype="image/png")
     
-
-    
 if __name__ == '__main__':
     premApp.run(debug=True)
